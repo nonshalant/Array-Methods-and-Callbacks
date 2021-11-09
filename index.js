@@ -49,9 +49,7 @@ function getYears(array, getFinalscb) {
     getFinals.map(function(item){
         return years.push(item.Year)
     });
-    return years
-    
-   
+    return years;
 }
 
 
@@ -63,10 +61,17 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
-}
 
+function getWinners(data, getFinals){
+    const winners = getFinals(data).map(item =>{
+        if(item['Home Team Goals'] > item['Away Team Goals']){
+            return item['Home Team Name'];
+        }else{
+            return item['Away Team Name'];
+
+        }})
+        return winners;
+}
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
